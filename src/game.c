@@ -54,6 +54,12 @@ void DrawGame(void)
     BeginDrawing();
     ClearBackground(BLACK);
     DrawTextureRec(screen.texture, (Rectangle){0, 0, GetScreenWidth(), -GetScreenHeight()}, (Vector2){0, 0}, WHITE);
+
+    if (!running) {
+        DrawText("Press MOUSE LEFT  to draw alive cells", 10, 10, 20, SKYBLUE);
+        DrawText("Press SPACE to start the simulation", 10, 30, 20, SKYBLUE);
+    }
+
     EndDrawing();
 }
 
@@ -73,7 +79,7 @@ int **update(const RenderTexture2D screen, int **cells, int **updated_cells, con
     for (int row = 0; row < GRID_HEIGHT; row++) {
         for (int col = 0; col < GRID_WIDTH; col++) {
             const int alive = sumArray(cells, GRID_HEIGHT, GRID_WIDTH, (Range){row-1, col-1, 3, 3}) - cells[row][col];
-            Color color = cells[row][col] == 0 ? COLOR_BG : WHITE;
+            Color color = cells[row][col] == 0 ? COLOR_BG : BLUE;
 
             if (cells[row][col] == 1) {
                 if (alive < 2 || alive > 3) {
@@ -83,14 +89,14 @@ int **update(const RenderTexture2D screen, int **cells, int **updated_cells, con
                 } else if (alive >= 2 && alive <= 3) {
                     updated_cells[row][col] = 1;
                     if (with_progress) {
-                        color = WHITE;
+                        color = BLUE;
                     }
                 }
             } else {
                 if (alive == 3) {
                     updated_cells[row][col] = 1;
                     if (with_progress) {
-                        color = WHITE;
+                        color = BLUE;
                     }
                 }
             }

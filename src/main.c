@@ -2,7 +2,7 @@
 
 int main(void)
 {
-    InitGame(800, 600);
+    InitGame(1280, 720);
 
     while (!WindowShouldClose())
     {
