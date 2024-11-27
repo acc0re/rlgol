@@ -3,6 +3,7 @@ Conway's Game of Life - Raylib Implementation
 ![grafik](https://github.com/user-attachments/assets/af64f79d-b0ac-4163-810a-1212a9257d55)
 
 A simple implementation of Conway's Game of Life using the Raylib library.
+
 Overview
 
 Conway's Game of Life is a cellular automaton consisting of a two-dimensional grid of cells. Each cell can be either "alive" or "dead." The state of the cells evolves over time based on a set of simple rules:
@@ -37,6 +38,7 @@ compile with cmake
 Usage
 
     Use the mouse to toggle cells between alive and dead.
+    Generate random alive cells.
     Start or pause the simulation (with SPACE).
 
 About Conway's Game of Life
