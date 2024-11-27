@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 project(rlgol C)
-set(CMAKE_C_STANDARD 99)
+set(CMAKE_C_STANDARD 23)
 
 # Adding Raylib
 include(FetchContent)

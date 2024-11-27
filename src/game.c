@@ -1,4 +1,3 @@
-#include <stdbool.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
@@ -57,11 +56,13 @@ void UpdateGame(void) {
     }
 
     // Generate random pattern with right mouse button
-    if (IsMouseButtonDown(MOUSE_RIGHT_BUTTON)) {
-        srand(time(NULL));
+    if (IsMouseButtonDown(MOUSE_RIGHT_BUTTON))
+    {
+        srand((unsigned int)time(nullptr)); // Seed the random number generator
+
         for (int i = 0; i < GRID_HEIGHT; i++) {
             for (int j = 0; j < GRID_WIDTH; j++) {
-                cells[i][j] = rand() % 2;
+                cells[i][j] = rand() % 2; // Generate random number (0 or 1)
             }
         }
         update(screen, cells, updated_cells, 10, false);
