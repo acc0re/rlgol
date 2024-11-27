@@ -1,6 +1,6 @@
 Conway's Game of Life - Raylib Implementation
 
-![grafik](https://github.com/user-attachments/assets/579adaa4-3e66-44c1-a192-8a5821452650)
+![grafik](https://github.com/user-attachments/assets/af64f79d-b0ac-4163-810a-1212a9257d55)
 
 A simple implementation of Conway's Game of Life using the Raylib library.
 Overview
