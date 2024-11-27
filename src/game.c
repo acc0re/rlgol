@@ -23,7 +23,7 @@ static bool running = false;
 // Initialize the game
 void InitGame(const int screenWidth, const int screenHeight) {
     InitWindow(screenWidth, screenHeight, "Raylib - Conways Game of Life");
-    SetTargetFPS(20);
+    SetTargetFPS(25);
 
     // Create arrays to store the current and next generation of cells
     cells = createArray(GRID_HEIGHT, GRID_WIDTH);
