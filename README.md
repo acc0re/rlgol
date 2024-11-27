@@ -1,5 +1,7 @@
 Conway's Game of Life - Raylib Implementation
 
+![grafik](https://github.com/user-attachments/assets/579adaa4-3e66-44c1-a192-8a5821452650)
+
 A simple implementation of Conway's Game of Life using the Raylib library.
 Overview
 
@@ -35,9 +37,7 @@ compile with cmake
 Usage
 
     Use the mouse to toggle cells between alive and dead.
-    Start or pause the simulation (e.g., with a key like SPACE).
-    
-![Screenshot 2024-11-27 135511](https://github.com/user-attachments/assets/b3f164ea-6f1e-4e6a-ac37-9b56d1ff38dc)
+    Start or pause the simulation (with SPACE).
 
 About Conway's Game of Life
 
