@@ -1,42 +1,44 @@
-# Simple and portable CMake template for raylib
+Conway's Game of Life - Raylib Implementation
 
-This is a basic project template for raylib using CMake and has been tested with Visual Studio, Visual Studio Code and CLion.
+![grafik](https://github.com/user-attachments/assets/af64f79d-b0ac-4163-810a-1212a9257d55)
 
-The master branch of the raylib source code is downloaded using CMake FetchContent from github and compiled from source as it is much easier than including prebuilt binaries for every platform and configuration.
+A simple implementation of Conway's Game of Life using the Raylib library.
+Overview
 
-Building from the cmake file will build both raylib and `src/main.c` which includes a basic example of a raylib program.
+Conway's Game of Life is a cellular automaton consisting of a two-dimensional grid of cells. Each cell can be either "alive" or "dead." The state of the cells evolves over time based on a set of simple rules:
 
-## Asset handling
+    Survival: A living cell with 2 or 3 living neighbors stays alive.
+    Death by Isolation: A living cell with fewer than 2 living neighbors dies.
+    Death by Overpopulation: A living cell with more than 3 living neighbors dies.
+    Reproduction: A dead cell with exactly 3 living neighbors becomes alive.
 
-The example in `src/main.c` uses an example image located in the `assets` folder.
-To load it we use `ASSETS_PATH`, which is a string macro with the *absolute* path "assets" directory.
-This macro is defined in the `CMakeLists.txt` file on line `23`.
- 
-If you plan on releasing or sharing your game consider manually setting the value of the `ASSETS_PATH` macro.
+Features
 
-In C you can concatenate string literals by putting them next to each other, 
-eg: `"A" "B"` is `"AB"`. So ASSETS_PATH `"test.png"` becomes `"/path/to/your/assets/test.png"`
+    Interactive grid where cells can be toggled between alive and dead.
+    Real-time simulation of generations.
+    Lightweight and fast implementation using Raylib.
 
-If you wanna share your game with others you should set ASSETS_PATH to be a *relative* path like "./assets/". You can do this in the CMakeLists.txt file. 
+Requirements
 
-## Using C++
+    Raylib 5
+    CMake
 
-Using c++ is quite simple, just change these lines in the `CMakeLists.txt`
-from
-```
-project(my_raylib_game C)
+Installation
 
-set(CMAKE_C_STANDARD 99)
+    Clone the repository:
 
-file(GLOB_RECURSE PROJECT_SOURCES CONFIGURE_DEPENDS "${CMAKE_CURRENT_LIST_DIR}/sources/*.c")
-```
-to
-```
-project(my_raylib_game CXX)
+git clone https://github.com/acc0re/rlgol/.git  
+cd rlgol
 
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+Make sure Raylib is installed and properly configured on your system.
 
-file(GLOB_RECURSE PROJECT_SOURCES CONFIGURE_DEPENDS "${CMAKE_CURRENT_LIST_DIR}/sources/*.cpp")
-```
-After this just reload cmake and it should build fine.
+compile with cmake
+
+Usage
+
+    Use the mouse to toggle cells between alive and dead.
+    Start or pause the simulation (with SPACE).
+
+About Conway's Game of Life
+
+Conway's Game of Life is a zero-player game developed by mathematician John Conway in 1970. It demonstrates how complex patterns and behaviors can emerge from simple rules.
