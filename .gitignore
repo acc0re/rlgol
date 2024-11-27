@@ -5,6 +5,7 @@ cmake-build-debug/
 bin/
 build/
 out/
+cmake-build-release/
 CMakeSettings.json
 cmake-build-release/.cmake/api/v1/reply/cache-v2-870b1568f0b2c2fcdfdf.json
 cmake-build-release/.cmake/api/v1/reply/cmakeFiles-v1-df90060417b9feb80637.json
