@@ -18,8 +18,8 @@ Features
 
 Requirements
 
-    Raylib (version X.X or later)
-    A C/C++ compiler
+    Raylib 5
+    CMake
 
 Installation
 
