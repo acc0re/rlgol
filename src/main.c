@@ -1,11 +1,9 @@
 #include "game.h"
 
-int main(void)
-{
+int main(void) {
     InitGame(1280, 720);
 
-    while (!WindowShouldClose())
-    {
+    while (!WindowShouldClose()) {
         UpdateGame();
         DrawGame();
     }
