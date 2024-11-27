@@ -1,4 +1,7 @@
 #include <stdbool.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
 #include "game.h"
 #include "array.h"
 
@@ -34,7 +37,7 @@ void UpdateGame(void)
         running = !running;
         update(screen, cells, updated_cells, 10, false);
     }
-    if (IsMouseButtonDown(0)) {
+    if (IsMouseButtonDown(MOUSE_LEFT_BUTTON)) {
         Vector2 pos = GetMousePosition();
         int x = (int)pos.x;
         int y = (int)pos.y;
@@ -42,6 +45,15 @@ void UpdateGame(void)
             cells[y/10][x/10] = 1;
             update(screen, cells, updated_cells, 10, false);
         }
+    }
+    if (IsMouseButtonDown(MOUSE_RIGHT_BUTTON)) {
+        srand(time(NULL)); // Seed the random number generator
+        for (int i = 0; i < GRID_HEIGHT; i++) {
+            for (int j = 0; j < GRID_WIDTH; j++) {
+                cells[i][j] = rand() % 2; // Set each cell to either 0 or 1 randomly
+            }
+        }
+        update(screen, cells, updated_cells, 10, false);
     }
 
     if (running) {
@@ -56,8 +68,10 @@ void DrawGame(void)
     DrawTextureRec(screen.texture, (Rectangle){0, 0, GetScreenWidth(), -GetScreenHeight()}, (Vector2){0, 0}, WHITE);
 
     if (!running) {
-        DrawText("Press MOUSE LEFT  to draw alive cells", 10, 10, 20, SKYBLUE);
-        DrawText("Press SPACE to start the simulation", 10, 30, 20, SKYBLUE);
+        Color customColor = ColorFromHex("25D36F");
+        DrawText("Press MOUSE LEFT  to draw alive cells", 10, 10, 20, customColor);
+        DrawText("Press MOUSE RIGHT to generate random pattern", 10, 30, 20, customColor);
+        DrawText("Press SPACE to start the simulation", 10, 50, 20, customColor);
     }
 
     EndDrawing();
@@ -107,4 +121,10 @@ int **update(const RenderTexture2D screen, int **cells, int **updated_cells, con
     EndTextureMode();
 
     return updated_cells;
+}
+
+Color ColorFromHex(const char *hex) {
+    int r, g, b;
+    sscanf(hex, "%02x%02x%02x", &r, &g, &b);
+    return (Color){r, g, b, 255};
 }
