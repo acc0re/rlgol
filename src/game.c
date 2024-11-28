@@ -46,9 +46,9 @@ void UpdateGame(void) {
 
     // Draw alive cells with left mouse button
     if (IsMouseButtonDown(MOUSE_LEFT_BUTTON)) {
-        Vector2 pos = GetMousePosition();
-        int x = (int)pos.x;
-        int y = (int)pos.y;
+        const Vector2 pos = GetMousePosition();
+        const int x = (int)pos.x;
+        const int y = (int)pos.y;
         if ((x >= 0 && x < screenWidth) && (y >= 0 && y < screenHeight)) {
             cells[y / 10][x / 10] = 1;
             update(screen, cells, updated_cells, 10, false);
