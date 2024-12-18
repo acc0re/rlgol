@@ -4,7 +4,7 @@
 
 A simple yet interactive implementation of Conway's Game of Life using the Raylib library.
 
-## Overview
+## 🧩 Overview
 
 **Conway's Game of Life** is a cellular automaton that simulates the evolution of life on a two-dimensional grid. Each cell on the grid can be either "alive" or "dead," and its state evolves based on four simple rules:
 
@@ -15,19 +15,19 @@ A simple yet interactive implementation of Conway's Game of Life using the Rayli
 
 This simulation showcases how complex patterns can emerge from simple rules, creating a dynamic, evolving world.
 
-## Features
+## ✨ Features
 
 - **Interactive Grid**: Easily toggle cells between alive and dead using the mouse.
 - **Real-time Simulation**: Watch the game evolve in real-time with each generation.
 - **Randomization**: Generate random living cells to start with a unique pattern.
 - **Lightweight & Fast**: Optimized for smooth performance using the Raylib library.
 
-## Requirements
+## 🛠 Requirements
 
-- Raylib 5 or later
-- CMake
+- Raylib 5 or later  
+- CMake  
 
-## Installation
+## 📦 Installation
 
 1. Clone the repository:
     ```bash
@@ -43,12 +43,12 @@ This simulation showcases how complex patterns can emerge from simple rules, cre
     make
     ```
 
-## Usage
+## 🎮 Usage
 
 - **Toggle Cells**: Click on the grid to toggle cells between alive and dead.
 - **Random Generation**: Generate random living cells by pressing the corresponding button.
 - **Start/Pause Simulation**: Start or pause the simulation with the **SPACE** key.
 
-## About Conway's Game of Life
+## 📖 About Conway's Game of Life
 
 Conway's Game of Life was created by mathematician John Conway in 1970. It is a "zero-player game," meaning the game evolves based on its initial configuration with no further input needed. The game demonstrates how complex and diverse patterns can emerge from a set of simple rules, making it a fascinating example of cellular automata.
